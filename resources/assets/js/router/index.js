@@ -120,6 +120,7 @@ export default new Router({
       component: require('../components/testcatalog/specimenrejectionreason'),
       beforeEnter: ifAuthenticated,
     },
+    
     {
       path: '/testcatalog/antibiotic',
       name: 'Antibiotic',

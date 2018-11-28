@@ -23,11 +23,17 @@ Vue.use(VueRouter);
 Vue.use(abilitiesPlugin, ability)
 Vue.component('index', require('./components/index.vue'))
 
+
+
 const app = new Vue({
     el: '#app',
     store,
     router
+
 });
+
+    
+
 
 
 

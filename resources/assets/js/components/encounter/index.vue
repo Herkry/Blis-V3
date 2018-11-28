@@ -57,6 +57,16 @@
                 Collect
                 <v-icon right dark>gradient</v-icon>
               </v-btn>
+            <v-btn
+            outline
+            small
+            title="Print"
+            color="gray"
+            flat
+            @click="report(props.item)">
+            Print
+            <v-icon right dark>print</v-icon>
+          </v-btn>
         </td>
       </template>
     </v-data-table>
@@ -173,6 +183,15 @@
 
       detail (encounter) {
         this.$refs.encounterDetailForm.modal(encounter);
+      },
+
+         report (test) {
+
+        apiCall({url: '/api/tracker/', method: 'GET' , data: 'PDF' })
+          .then(resp => {})
+          .catch(error => {
+          console.log(error.response)
+        })
       },
     }
   }

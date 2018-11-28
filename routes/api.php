@@ -173,10 +173,11 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::group(['middleware' => ['permission:manage_equipment']], function () {
     });
 
-    // todo: tobe be secured ... out in the open
-    Route::get('report', ['uses' => 'ReportController@index']);
 
     // Summary Log|Incidents|Report
     Route::group(['middleware' => ['permission:manage_biosafty_biosecurity']], function () {
     });
 });
+    // todo: tobe be secured ... out in the open
+    Route::get('report', ['uses' => 'ReportController@index']);
+     Route::get('tracker/{id}', ['uses' => 'ReportController@visit']);
